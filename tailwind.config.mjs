@@ -7,6 +7,7 @@ export default {
 		colors: {
 			accent: colors.emerald,
 			white: colors.white,
+			gray: colors.gray,
 		},
 	},
 	plugins: [],
