@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import Link from './Link.astro';
+
+interface Props {
+  icon: string;
+  href: string;
+}
+
+const { icon, href } = Astro.props;
+---
+
+<div class="text-xs my-1">
+    <Icon name={ icon } class="inline mx-3 w-4" />
+    <Link href={ href }><slot /></Link>
+</div>

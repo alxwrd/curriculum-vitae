@@ -1,0 +1,18 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  icon?: string;
+  examples?: string;
+}
+
+const { icon = "fa-solid:align-justify", examples = ""} = Astro.props;
+
+---
+
+<div>
+    <Icon name={icon} class="inline mx-8 w-4"/><span><slot /></span>
+    { examples &&
+        <span class="text-[.6rem]">({examples})</span>
+    }
+</div>

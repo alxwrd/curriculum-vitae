@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  company: string;
+  from: Date;
+  to: Date;
+}
+
+const { title, company, from, to } = Astro.props;
+---
+
+
+<div class="py-4">
+    <div class="flex flex-row items-baseline">
+        <h4 class="text-lg text-accent-600">{title}</h4>
+        <span class="text-gray-400 text-xs font-thin mx-2">{company}</span>
+        <span class="text-gray-400 text-xs font-thin flex-grow text-right uppercase">
+            {from.toLocaleDateString(undefined, {month: "short", year: "numeric"})} - 
+            {to.toLocaleDateString(undefined, {month: "short", year: "numeric"})}
+        </span>
+    </div>
+
+    <ul class="list-disc text-sm ml-4">
+        <slot />
+    </ul>
+</div>

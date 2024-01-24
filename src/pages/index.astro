@@ -1,16 +1,100 @@
 ---
+import { Icon } from 'astro-icon/components';
 
+import { Skill, Section, Job, Contact, Link } from '../components';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+		
+		<title>Alex Ward</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-accent-50 print:bg-transparent my-4 print:my-0 font-serif selection:bg-fuchsia-300">
+		<main id="main" class="w-[52rem] bg-white mx-auto px-16 print:px-0 py-8 print:py-0 rounded shadow-lg shadow-accent-800 print:shadow-none">
+		<div class="print:hidden absolute top-0 right-0 m-5">
+			<div class="mb-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
+				<Icon class="mx-auto h-14" name="fa-solid:print" />
+			</div>
+			<div class="rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
+				<a href="https://github.com/alxwrd/curriculum-vitae"><Icon class="mx-auto h-14" name="fa-brands:github" /></a>
+			</div>
+		</div>
+		<h2 class="text-accent-600 text-sm tracking-[.75em] text-center py-2 uppercase">Curriculum Vitae</h2>
+		<h1 class="font-['Lobster'] text-7xl text-center py-2">Alex Ward</h2>
+			<div class="flex flex-col">
+				<Contact icon="fa-solid:envelope" href="mailto:alxwrd@googlemail.com">alxwrd@googlemail.com</Contact>
+				<Contact icon="fa-brands:github" href="https://github.com/alxwrd/">github.com/alxwrd</Contact>
+			</div>
+      <Section>
+        <div class="grid grid-cols-3">
+          <Skill icon="fa-brands:python" examples="Flask, FastAPI">Python</Skill>
+          <Skill icon="fa-brands:node-js">Node.js</Skill>
+          <Skill icon="fa-brands:docker">Docker</Skill>
+          <Skill icon="fa-brands:js-square">Javascript</Skill>
+          <Skill icon="fa-brands:git-alt">Git</Skill>
+          <Skill icon="fa-solid:terminal">Linux</Skill>
+          <Skill icon="fa-brands:aws">AWS</Skill>
+          <Skill icon="fa-solid:project-diagram">CI/CD</Skill>
+          <Skill icon="fa-brands:github">Github</Skill>
+          <Skill icon="fa-solid:database">Postgres</Skill>
+        </div>
+      </Section>
+			<Section title="Experience">
+				<Job title="Software Engineer" company="Tessian" from={new Date("2022-02-07")} to={new Date("2024-01-19")}>
+					<li>Split up monolithic build pipeline reducing build time for individual applications from several hours to less than twenty minutes.</li>
+					<li>Wrote multiple command line tools to simplify and enhance developer workflows.
+						<li class="ml-6">Decryption tool that automatically decrypts encrypted data via secrets stored 1Password.</li>
+						<li class="ml-6">Release tool that captured the flow of releasing a new version of a service - removing cognitive overhead that came with juggling a release.</li>
+					</li>
+					<li>Implemented an external API service that tied together multiple backend services to allow customers programmatic access to data and to allow integration development.</li>
+					<li>Organised and ran a team for the <Link underline href="https://www.hackthebox.com/events/cyber-apocalypse-2022">Hack the Box 2022 CTF</Link> where we placed 173rd out of 7,024 teams.</li>
+					<li>Redesigned the customer onboard/offboard process to allow services to better control their own data and provide reporting mechanisms to prevent unwanted data retention.</li>
+				</Job>
+				<Job title="Software Engineer" company="Oracle" from={new Date("2018-11-01")} to={new Date("2022-01-01")}>
+					<li>Built and maintained a Gitlab deployment pipeline across multiple OCI instances which is responsible for building projects, running tests, and deploying to dynamic review environments for QA.</li>
+					<li>Built tooling for managing local development environments and starting up development Docker containers to assist with onboarding new team members and save development time.</li>
+					<li>Proactively upgraded application from Python 2 to Python 3 in anticipation of the Python 2 end of life.</li>
+					<li>Wrote a Python testing framework using Selenium and PyTest; designed to abstract away pain points when writing Selenium tests to make writing automated tests easier for QA.</li>
+				</Job>
+				<Job title="Application Developer" company="GSA Ltd" from={new Date("2016-06-01")} to={new Date("2018-11-01")}>
+					<li>Designed and built a Python bridge to allow a legacy application to interface with a new external system.</li>
+					<li>Built developer pipeline tools to improve efficiency:
+						<li class="ml-6">Workflow tools to help sync changes with remote development environments and run linters which cut down on deployment issues.</li>
+						<li class="ml-6">Build tools to drastically reduce the time to release and deploy.</li>
+					</li>
+					<li>Built and maintained internal Python libraries.</li>
+					<li>Provide technical assistance to the support team / maintaining existing systems.</li>
+				</Job>
+				<Job title="Administrator" company="Npower" from={new Date("2014-01-01")} to={new Date("2016-06-01")}>
+					<li>Designed and built a Python bridge to allow a legacy application to interface with a new external system.</li>
+					<li>Built developer pipeline tools to improve efficiency:
+						<li class="ml-6">Workflow tools to help sync changes with remote development environments and run linters which cut down on deployment issues.</li>
+						<li class="ml-6">Build tools to drastically reduce the time to release and deploy.</li>
+					</li>
+					<li>Built and maintained internal Python libraries.</li>
+					<li>Provide technical assistance to the support team / maintaining existing systems.</li>
+				</Job>
+			</Section>
+			<Section title="Open Source">
+        <div class="grid grid-cols-2">
+          <div>
+            <p>textstat/textstat</p>
+            <p>maintainer</p>
+            <p>A Python package to calculate readability statistics of a text object - paragraphs, sentences, articles.</p>
+          </div>
+          <div>
+            <p>textstat/textstat</p>
+            <p>maintainer</p>
+            <p>A Python package to calculate readability statistics of a text object - paragraphs, sentences, articles.</p>
+          </div>
+        </div>
+      </Section>
+			</main>
 	</body>
 </html>

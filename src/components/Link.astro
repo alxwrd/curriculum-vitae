@@ -1,0 +1,18 @@
+---
+interface Props {
+  href: string;
+  underline?: boolean;
+}
+
+const { href, underline = false } = Astro.props;
+---
+
+<a href={ href }>
+    <span class:list={[
+        "text-accent-600",
+        underline? "underline": "",
+        "underline-offset-2",
+        "hover:underline-offset-4",
+        "transition-all",
+    ]}><slot /></span>
+</a>
