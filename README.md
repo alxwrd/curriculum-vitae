@@ -12,3 +12,8 @@ git clone git@github.com:alxwrd/curriculum-vitae.git && cd curriculum-vitae
 pnpm install
 pnpm dev
 ```
+
+For icons, see:
+
+- https://icones.js.org/collection/fa-brands
+- https://icones.js.org/collection/fa-solid
