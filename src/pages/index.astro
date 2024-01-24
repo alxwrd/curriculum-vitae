@@ -38,17 +38,16 @@ import { Skill, Section, Job, Contact, Link } from '../components';
 				<Contact icon="fa-brands:github" href="https://github.com/alxwrd/">github.com/alxwrd</Contact>
 			</div>
       <Section>
-        <div class="grid grid-cols-3">
+        <div class="grid grid-cols-3 gap-2">
           <Skill icon="fa-brands:python" examples="Flask, FastAPI">Python</Skill>
-          <Skill icon="fa-brands:node-js">Node.js</Skill>
-          <Skill icon="fa-brands:docker">Docker</Skill>
-          <Skill icon="fa-brands:js-square">Javascript</Skill>
-          <Skill icon="fa-brands:git-alt">Git</Skill>
-          <Skill icon="fa-solid:terminal">Linux</Skill>
-          <Skill icon="fa-brands:aws">AWS</Skill>
-          <Skill icon="fa-solid:project-diagram">CI/CD</Skill>
-          <Skill icon="fa-brands:github">Github</Skill>
-          <Skill icon="fa-solid:database">Postgres</Skill>
+          <Skill icon="fa-brands:node-js" examples="Express.js, SvelteKit">Node.js</Skill>
+          <Skill icon="fa-brands:docker" examples="CLI, compose">Docker</Skill>
+          <Skill icon="fa-brands:js-square" examples="React, Svelte">Javascript</Skill>
+          <Skill icon="fa-brands:git-alt" examples="CLI, Gitlab, Github">Git</Skill>
+          <Skill icon="fa-brands:linux" examples="RHEL based, Debian based">Linux</Skill>
+          <Skill icon="fa-brands:aws" examples="ECS, S3, EMR, MWAA">AWS</Skill>
+          <Skill icon="fa-solid:project-diagram" examples="Gitlab Pipelines, CircleCI">CI/CD</Skill>
+          <Skill icon="fa-solid:database" examples="Postgres, MySQL, SQL Server">SQL</Skill>
         </div>
       </Section>
 			<Section title="Experience">
@@ -82,19 +81,21 @@ import { Skill, Section, Job, Contact, Link } from '../components';
 				</Job>
 			</Section>
 			<Section title="Open Source">
-        <div class="grid grid-cols-2">
-          <div>
-            <p>textstat/textstat</p>
-            <p>maintainer</p>
-            <p>A Python package to calculate readability statistics of a text object - paragraphs, sentences, articles.</p>
-          </div>
-          <div>
-            <p>textstat/textstat</p>
-            <p>maintainer</p>
-            <p>A Python package to calculate readability statistics of a text object - paragraphs, sentences, articles.</p>
-          </div>
-        </div>
-      </Section>
+				<div class="grid grid-cols-2">
+					<div class="p-2">
+						<Icon name="fa-brands:github" class="inline"></Icon>
+						<Link underline href="https://github.com/textstat/textstat">textstat/textstat</Link>
+						<span class="italic text-sm text-gray-500 mx-8">maintainer</span>
+						<p class="text-sm my-2">A Python package to calculate readability statistics of a text object - paragraphs, sentences, articles.</p>
+					</div>
+					<div class="p-2">
+						<Icon name="fa-brands:github" class="inline"></Icon>
+						<Link underline href="https://github.com/trailassociation-uk/trailassociation.uk">trailassociation.uk</Link>
+						<span class="italic text-sm text-gray-500 mx-8">maintainer</span>
+						<p class="text-sm my-2">A resource for trail associations in the UK to help with promotion and organisation.</p>
+					</div>
+				</div>
+			</Section>
 			</main>
 	</body>
 </html>

@@ -11,7 +11,7 @@ const { icon = "fa-solid:align-justify", examples = ""} = Astro.props;
 ---
 
 <div>
-    <Icon name={icon} class="inline mx-8 w-4"/><span><slot /></span>
+    <Icon name={icon} class="inline mx-2 w-4"/><span><slot /></span>
     { examples &&
         <span class="text-[.6rem]">({examples})</span>
     }
