@@ -14,16 +14,22 @@ import { Skill, Section, Job, Contact, Link } from '../components';
 		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 		
 		<title>Alex Ward</title>
+		<script>
+			document.getElementById("print-button")
+				?.addEventListener("click", () => {
+					window.print()
+				});
+		  </script>
 	</head>
 	<body class="bg-accent-50 print:bg-transparent my-4 print:my-0 font-serif selection:bg-fuchsia-300">
 		<main id="main" class="w-[52rem] bg-white mx-auto px-16 print:px-0 py-8 print:py-0 rounded shadow-lg shadow-accent-800 print:shadow-none">
 		<div class="print:hidden float-right -mx-10">
-			<div class="mb-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
+			<button id="print-button" class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
 				<Icon class="mx-auto h-14" name="fa-solid:print" />
-			</div>
-			<div class="rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
+			</button>
+			<button class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
 				<a href="https://github.com/alxwrd/curriculum-vitae"><Icon class="mx-auto h-14" name="fa-brands:github" /></a>
-			</div>
+			</button>
 		</div>
 		<h2 class="text-accent-600 text-sm tracking-[.75em] text-center py-2 uppercase">Curriculum Vitae</h2>
 		<h1 class="font-['Lobster'] text-7xl text-center py-2">Alex Ward</h2>
