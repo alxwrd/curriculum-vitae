@@ -31,3 +31,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+
+  pdf:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: HTML to PDF
+        uses: misaelnieto/web_to_pdf_action@master
+        with:
+          webPageURL: https://cv.alxwrd.co.uk/
+          outputFile: ./CV.pdf
+          usePuppeteer: true
+          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+      - name: Release CV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run:
+          gh release delete latest || true;
+          gh release create latest --latest "./CV.pdf#Alex Ward - CV.pdf";
