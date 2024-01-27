@@ -5,14 +5,14 @@ import { Skill, Section, Job, Contact, Link } from '../components';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/favicon.ico">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
     <meta name="author" content="Alex Ward">
     <meta name="description" content="An overview of my professional experiences, and showcased projects. Connect with me to explore collaboration opportunities and learn more about what I bring to the table.">
@@ -24,35 +24,35 @@ import { Skill, Section, Job, Contact, Link } from '../components';
     <meta property="og:image" content="https://gravatar.com/userimage/138229554/2f0a591fe2ab47c88169c038b4c8ae58.jpeg?size=256">
     <meta property="og:url" content="https://cv.alxwrd.co.uk/">
     <meta property="og:type" content="website">
+    
+    <title>Alex Ward</title>
 
-		
-		<title>Alex Ward</title>
-		<script>
-			document.getElementById("print-button")
-				?.addEventListener("click", () => {
-					window.print()
-				});
-		  </script>
-	</head>
-	<body class="bg-accent-50 print:bg-transparent my-4 print:my-0 font-serif selection:bg-fuchsia-300">
-		<main id="main" class="w-[52rem] bg-white mx-auto px-16 print:px-0 py-8 print:py-0 rounded shadow-lg shadow-accent-800 print:shadow-none">
-		<div class="print:hidden float-right -mx-10 -my-6">
-			<button id="print-button" class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
-				<Icon class="mx-auto h-14" name="fa-solid:print" />
-			</button>
-			<button class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
-				<a href="https://github.com/alxwrd/curriculum-vitae/releases/download/latest/AlexWard-CV.pdf" target="_blank" ><Icon class="mx-auto h-14" name="fa-solid:file-pdf" /></a>
-			</button>
-			<button class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
-				<a href="https://github.com/alxwrd/curriculum-vitae"><Icon class="mx-auto h-14" name="fa-brands:github" /></a>
-			</button>
-		</div>
-		<h2 class="text-accent-600 text-sm tracking-[.75em] text-center py-2 uppercase">Curriculum Vitae</h2>
-		<h1 class="font-['Lobster'] text-7xl text-center py-2">Alex Ward</h2>
-			<div class="flex flex-col">
-				<Contact icon="fa-solid:envelope" href="mailto:alxwrd@googlemail.com">alxwrd@googlemail.com</Contact>
-				<Contact icon="fa-brands:github" href="https://github.com/alxwrd/">github.com/alxwrd</Contact>
-			</div>
+    <script>
+      document.getElementById("print-button")
+        ?.addEventListener("click", () => {
+          window.print()
+        });
+      </script>
+  </head>
+  <body class="bg-accent-50 print:bg-transparent my-4 print:my-0 font-serif selection:bg-fuchsia-300">
+    <main id="main" class="w-[52rem] bg-white mx-auto px-16 print:px-0 py-8 print:py-0 rounded shadow-lg shadow-accent-800 print:shadow-none">
+    <div class="print:hidden float-right -mx-10 -my-6">
+      <button id="print-button" class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
+        <Icon class="mx-auto h-14" name="fa-solid:print" />
+      </button>
+      <button class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
+        <a href="https://github.com/alxwrd/curriculum-vitae/releases/download/latest/AlexWard-CV.pdf" target="_blank" ><Icon class="mx-auto h-14" name="fa-solid:file-pdf" /></a>
+      </button>
+      <button class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md">
+        <a href="https://github.com/alxwrd/curriculum-vitae"><Icon class="mx-auto h-14" name="fa-brands:github" /></a>
+      </button>
+    </div>
+    <h2 class="text-accent-600 text-sm tracking-[.75em] text-center py-2 uppercase">Curriculum Vitae</h2>
+    <h1 class="font-['Lobster'] text-7xl text-center py-2">Alex Ward</h2>
+      <div class="flex flex-col">
+        <Contact icon="fa-solid:envelope" href="mailto:alxwrd@googlemail.com">alxwrd@googlemail.com</Contact>
+        <Contact icon="fa-brands:github" href="https://github.com/alxwrd/">github.com/alxwrd</Contact>
+      </div>
       <Section>
         <div class="grid grid-cols-3 gap-2">
           <Skill icon="fa-brands:python" examples="Flask, FastAPI">Python</Skill>
@@ -66,52 +66,52 @@ import { Skill, Section, Job, Contact, Link } from '../components';
           <Skill icon="fa-solid:database" examples="Postgres, MySQL, SQL Server">SQL</Skill>
         </div>
       </Section>
-			<Section title="Experience">
-				<Job title="Software Engineer" company="Tessian" from={new Date("2022-02-07")} to={new Date("2024-01-19")}>
-					<li>Split up monolithic build pipeline reducing build time for individual applications from several hours to less than twenty minutes.</li>
-					<li>Crafted developer-friendly command line tools, simplifying and optimizing developer workflows for increased productivity.
-						<li class="ml-6">Developed a tool that automated the decryption of encrypted data and ensuring secure, hassle-free data access.</li>
-						<li class="ml-6">Created a release tool that simplifies the release process, reducing cognitive load and boosting the efficiency of service releases.</li>
-					</li>
-					<li>Implemented an external API service that tied together multiple backend services to allow customers programmatic access to data and to allow integration development.</li>
-					<li>Organised and led a team for the <Link underline href="https://www.hackthebox.com/events/cyber-apocalypse-2022">Hack the Box 2022 CTF</Link> where we placed 173rd out of 7,024 teams.</li>
-					<li>Overhauled the customer onboarding/offboarding process, giving services greater control over their data and implementing reporting mechanisms to prevent unintended data retention.</li>
-				</Job>
-				<Job title="Software Engineer" company="Oracle" from={new Date("2018-11-01")} to={new Date("2022-01-01")}>
-					<li>Established and managed a Gitlab deployment pipeline across multiple OCI instances, handling project builds, test executions, and dynamic deployment to review environments for QA testing.</li>
-					<li>Developed tools to manage local development environments and initiate development Docker containers, facilitating seamless onboarding for new team members and saving valuable development time.</li>
-					<li>Anticipating Python 2 end-of-life, proactively upgraded the application from Python 2 to Python 3, ensuring compatibility and future-proofing the technology stack.</li>
-					<li>Innovated a Python testing framework utilizing Selenium and PyTest, simplifying the complexities of writing Selenium tests and providing a user-friendly interface for QA to automate testing more efficiently.</li>
-				</Job>
-				<Job title="Application Developer" company="GSA Ltd" from={new Date("2016-06-01")} to={new Date("2018-11-01")}>
-					<li>Engineered a Python bridge facilitating communication between a legacy application and a new external system, ensuring seamless integration and interoperability.</li>
-					<li>Built developer pipeline tools to improve efficiency:
-						<li class="ml-6">Developed tools to synchronize changes with remote development environments and run linters, minimizing deployment issues and improving efficiency.</li>
-						<li class="ml-6">Created tools to significantly reduce release and deployment times, enhancing overall development speed.</li>
-					</li>
-					<li>Designed and maintained internal Python libraries, ensuring they meet evolving development needs and standards.</li>
-					<li>Provided technical assistance to the support team and actively maintained existing systems.</li>
-				</Job>
-				<Job title="Administrator" company="Npower" from={new Date("2014-01-01")} to={new Date("2016-06-01")}>
+      <Section title="Experience">
+        <Job title="Software Engineer" company="Tessian" from={new Date("2022-02-07")} to={new Date("2024-01-19")}>
+          <li>Split up monolithic build pipeline reducing build time for individual applications from several hours to less than twenty minutes.</li>
+          <li>Crafted developer-friendly command line tools, simplifying and optimizing developer workflows for increased productivity.
+            <li class="ml-6">Developed a tool that automated the decryption of encrypted data and ensuring secure, hassle-free data access.</li>
+            <li class="ml-6">Created a release tool that simplifies the release process, reducing cognitive load and boosting the efficiency of service releases.</li>
+          </li>
+          <li>Implemented an external API service that tied together multiple backend services to allow customers programmatic access to data and to allow integration development.</li>
+          <li>Organised and led a team for the <Link underline href="https://www.hackthebox.com/events/cyber-apocalypse-2022">Hack the Box 2022 CTF</Link> where we placed 173rd out of 7,024 teams.</li>
+          <li>Overhauled the customer onboarding/offboarding process, giving services greater control over their data and implementing reporting mechanisms to prevent unintended data retention.</li>
+        </Job>
+        <Job title="Software Engineer" company="Oracle" from={new Date("2018-11-01")} to={new Date("2022-01-01")}>
+          <li>Established and managed a Gitlab deployment pipeline across multiple OCI instances, handling project builds, test executions, and dynamic deployment to review environments for QA testing.</li>
+          <li>Developed tools to manage local development environments and initiate development Docker containers, facilitating seamless onboarding for new team members and saving valuable development time.</li>
+          <li>Anticipating Python 2 end-of-life, proactively upgraded the application from Python 2 to Python 3, ensuring compatibility and future-proofing the technology stack.</li>
+          <li>Innovated a Python testing framework utilizing Selenium and PyTest, simplifying the complexities of writing Selenium tests and providing a user-friendly interface for QA to automate testing more efficiently.</li>
+        </Job>
+        <Job title="Application Developer" company="GSA Ltd" from={new Date("2016-06-01")} to={new Date("2018-11-01")}>
+          <li>Engineered a Python bridge facilitating communication between a legacy application and a new external system, ensuring seamless integration and interoperability.</li>
+          <li>Built developer pipeline tools to improve efficiency:
+            <li class="ml-6">Developed tools to synchronize changes with remote development environments and run linters, minimizing deployment issues and improving efficiency.</li>
+            <li class="ml-6">Created tools to significantly reduce release and deployment times, enhancing overall development speed.</li>
+          </li>
+          <li>Designed and maintained internal Python libraries, ensuring they meet evolving development needs and standards.</li>
+          <li>Provided technical assistance to the support team and actively maintained existing systems.</li>
+        </Job>
+        <Job title="Administrator" company="Npower" from={new Date("2014-01-01")} to={new Date("2016-06-01")}>
           <li>Developed a Python <Link underline href="https://github.com/alxwrd/auto-report">application</Link> that generates and emails HTML reports from booking system exports, eliminating the manual creation of reports and saving several hours daily.</li>
-				</Job>
-			</Section>
-			<Section title="Open Source">
-				<div class="grid grid-cols-2">
-					<div class="p-2">
-						<Icon name="fa-brands:github" class="inline"></Icon>
-						<Link underline href="https://github.com/textstat/textstat">textstat/textstat</Link>
-						<span class="italic text-sm text-gray-500 mx-8">maintainer</span>
-						<p class="text-sm my-2">A Python package to calculate readability statistics of a text object - paragraphs, sentences, articles.</p>
-					</div>
-					<div class="p-2">
-						<Icon name="fa-brands:github" class="inline"></Icon>
-						<Link underline href="https://github.com/trailassociation-uk/trailassociation.uk">trailassociation.uk</Link>
-						<span class="italic text-sm text-gray-500 mx-8">maintainer</span>
-						<p class="text-sm my-2">A resource for trail associations in the UK to help with promotion and organisation.</p>
-					</div>
-				</div>
-			</Section>
-			</main>
-	</body>
+        </Job>
+      </Section>
+      <Section title="Open Source">
+        <div class="grid grid-cols-2">
+          <div class="p-2">
+            <Icon name="fa-brands:github" class="inline"></Icon>
+            <Link underline href="https://github.com/textstat/textstat">textstat/textstat</Link>
+            <span class="italic text-sm text-gray-500 mx-8">maintainer</span>
+            <p class="text-sm my-2">A Python package to calculate readability statistics of a text object - paragraphs, sentences, articles.</p>
+          </div>
+          <div class="p-2">
+            <Icon name="fa-brands:github" class="inline"></Icon>
+            <Link underline href="https://github.com/trailassociation-uk/trailassociation.uk">trailassociation.uk</Link>
+            <span class="italic text-sm text-gray-500 mx-8">maintainer</span>
+            <p class="text-sm my-2">A resource for trail associations in the UK to help with promotion and organisation.</p>
+          </div>
+        </div>
+      </Section>
+      </main>
+  </body>
 </html>
