@@ -24,7 +24,7 @@ import { Skill, Section, Job, Contact, Link } from "../components";
     />
     <meta
       name="keywords"
-      content="CV, Experience, Software Engineer, Npower, Gitlab, Docker, Python, Selenium, PyTest, Deployment Pipelines, API, Hack the Box, CTF, Open Source developer, textstat, trailassociation.uk, API Development, Workflow Tools, Tooling"
+      content="CV, Experience, Software Engineer, Gitlab, Docker, Python, Selenium, PyTest, Deployment Pipelines, API, Hack the Box, CTF, Open Source developer, textstat, trailassociation.uk, API Development, Workflow Tools, Tooling"
     />
 
     <meta property="og:title" content="Alex Ward's CV" />
@@ -94,32 +94,54 @@ import { Skill, Section, Job, Contact, Link } from "../components";
       </div>
       <Section>
         <div class="grid grid-cols-3 gap-2">
-          <Skill icon="fa-brands:python" examples="Flask, FastAPI">
+          <Skill padding icon="fa-brands:python" examples="Flask, FastAPI">
             Python
           </Skill>
-          <Skill icon="fa-brands:node-js" examples="Express.js, SvelteKit">
+          <Skill
+            padding
+            icon="fa-brands:node-js"
+            examples="Express.js, SvelteKit"
+          >
             Node.js
           </Skill>
-          <Skill icon="fa-brands:docker" examples="CLI, compose">Docker</Skill>
-          <Skill icon="fa-brands:js-square" examples="React, Svelte">
+          <Skill
+            padding
+            icon="fa-brands:docker"
+            examples="Containers, CLI, compose"
+          >
+            Docker
+          </Skill>
+          <Skill padding icon="fa-brands:js-square" examples="React, Svelte">
             Javascript
           </Skill>
-          <Skill icon="fa-brands:git-alt" examples="CLI, Gitlab, Github">
+          <Skill
+            padding
+            icon="fa-brands:git-alt"
+            examples="CLI, Gitlab, Github"
+          >
             Git
           </Skill>
-          <Skill icon="fa-brands:linux" examples="RHEL based, Debian based">
+          <Skill
+            padding
+            icon="fa-brands:linux"
+            examples="RHEL based, Debian based"
+          >
             Linux
           </Skill>
-          <Skill icon="fa-brands:aws" examples="ECS, S3, EMR, MWAA">AWS</Skill>
+          <Skill padding icon="fa-brands:aws" examples="ECS, S3, EMR, MWAA">
+            AWS
+          </Skill>
           <Skill
-            icon="fa-solid:project-diagram"
+            padding
+            icon="fa-solid:sync-alt"
             examples="Gitlab Pipelines, CircleCI"
           >
             CI/CD
           </Skill>
           <Skill
+            padding
             icon="fa-solid:database"
-            examples="Postgres, MySQL, SQL Server"
+            examples="Postgres, Oracle DB, SQL Server"
           >
             SQL
           </Skill>
@@ -132,17 +154,27 @@ import { Skill, Section, Job, Contact, Link } from "../components";
           from={new Date("2022-02-07")}
           to={new Date("2024-01-19")}
         >
+          <Fragment slot="worked-with">
+            <Skill icon="fa-brands:python">Flask</Skill>
+            <Skill icon="fa-solid:database">Postgres</Skill>
+            <Skill icon="fa-brands:aws" examples="ECS, S3, EMR, MWAA" />
+            <Skill icon="fa-brands:docker">Docker</Skill>
+            <Skill icon="fa-brands:github">Github</Skill>
+            <Skill icon="fa-solid:sync-alt">CircleCI</Skill>
+            <Skill icon="fa-solid:project-diagram">Kafka</Skill>
+          </Fragment>
           <li>
-            Split up monolithic build pipeline reducing build time for
+            Split up a monolithic build pipeline reducing build time for
             individual applications from several hours to less than twenty
-            minutes.
+            minutes with 100+ CI credits saved per build.
           </li>
           <li>
             Crafted developer-friendly command line tools, simplifying and
-            optimizing developer workflows for increased productivity.
+            optimizing developer workflows for increased productivity. Regularly
+            used by 90+ engineers and winner of "fan-favourite" hackathon award.
             <li class="ml-6">
-              Developed a tool that automated the decryption of encrypted data
-              and ensuring secure, hassle-free data access.
+              Developed a tool that automated the decryption of encrypted log
+              data and ensuring secure, hassle-free data access.
             </li>
             <li class="ml-6">
               Created a release tool that simplifies the release process,
@@ -151,9 +183,23 @@ import { Skill, Section, Job, Contact, Link } from "../components";
             </li>
           </li>
           <li>
+            Regularly produced quaility, engaging, and concise tutorials and
+            documentation for internal processes and systems. Providing examples
+            and highlighting pitfalls where approriate.
+          </li>
+          <li>
             Implemented an external API service that tied together multiple
             backend services to allow customers programmatic access to data and
-            to allow integration development.
+            to allow 3rd party integration development.
+          </li>
+          <li>
+            Overhauled the customer onboarding/offboarding process, giving
+            indiviual services greater control over their data, and implementing
+            reporting mechanisms to prevent unintended data retention. Automated
+            the process to save the Platform team hours of manual work each
+            month - and additionally reducing out-of-hours work as
+            performance-heavy offboarding jobs were scheduled for overnight and
+            didn't require manually starting.
           </li>
           <li>
             Organised and led a team for the <Link
@@ -163,11 +209,6 @@ import { Skill, Section, Job, Contact, Link } from "../components";
               Hack the Box 2022 CTF
             </Link> where we placed 173rd out of 7,024 teams.
           </li>
-          <li>
-            Overhauled the customer onboarding/offboarding process, giving
-            services greater control over their data and implementing reporting
-            mechanisms to prevent unintended data retention.
-          </li>
         </Job>
         <Job
           title="Software Engineer"
@@ -175,6 +216,17 @@ import { Skill, Section, Job, Contact, Link } from "../components";
           from={new Date("2018-11-01")}
           to={new Date("2022-01-01")}
         >
+          <Fragment slot="worked-with">
+            <Skill icon="fa-brands:python">Django</Skill>
+            <Skill icon="fa-solid:database">Oracle DB</Skill>
+            <Skill icon="fa-solid:cloud">Oracle Cloud</Skill>
+            <Skill icon="fa-brands:linux">Oracle Linux</Skill>
+            <Skill icon="fa-brands:docker">Docker</Skill>
+            <Skill icon="fa-brands:node-js">Express.js</Skill>
+            <Skill icon="fa-brands:java">Spring Boot</Skill>
+            <Skill icon="fa-brands:gitlab">Gitlab</Skill>
+            <Skill icon="fa-solid:sync-alt">Gitlab Pipelines</Skill>
+          </Fragment>
           <li>
             Established and managed a Gitlab deployment pipeline across multiple
             OCI instances, handling project builds, test executions, and dynamic
@@ -204,6 +256,11 @@ import { Skill, Section, Job, Contact, Link } from "../components";
           from={new Date("2016-06-01")}
           to={new Date("2018-11-01")}
         >
+          <Fragment slot="worked-with">
+            <Skill icon="fa-brands:python">IronPython</Skill>
+            <Skill icon="fa-brands:microsoft">SQL Server</Skill>
+            <Skill icon="fa-brands:microsoft">TFS</Skill>
+          </Fragment>
           <li>
             Engineered a Python bridge facilitating communication between a
             legacy application and a new external system, ensuring seamless
@@ -236,6 +293,9 @@ import { Skill, Section, Job, Contact, Link } from "../components";
           from={new Date("2014-01-01")}
           to={new Date("2016-06-01")}
         >
+          <Fragment slot="worked-with">
+            <Skill icon="fa-brands:python">Python</Skill>
+          </Fragment>
           <li>
             Developed a Python <Link
               underline
