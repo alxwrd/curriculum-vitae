@@ -1,7 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 
-import { Skill, Section, Job, Contact, Link } from "../components";
+import {
+  ActionButton,
+  Skill,
+  Section,
+  Job,
+  Contact,
+  Link,
+} from "../components";
 ---
 
 <html lang="en">
@@ -52,38 +59,27 @@ import { Skill, Section, Job, Contact, Link } from "../components";
   >
     <main
       id="main"
-      class="w-[52rem] bg-white mx-auto px-16 print:px-0 py-8 print:py-0 rounded shadow-lg shadow-accent-800 print:shadow-none"
+      class="lg:w-[52rem] bg-white mx-auto md:px-8 lg:px-16 print:px-0 py-2 sm:py-8 print:py-0 rounded shadow-lg shadow-accent-800 print:shadow-none"
     >
-      <div class="print:hidden float-right -mx-10 -my-6">
-        <button
-          id="print-button"
-          class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md"
-        >
-          <Icon class="mx-auto h-14" name="fa-solid:print" />
-        </button>
-        <button
-          class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md"
-        >
-          <a
-            href="https://github.com/alxwrd/curriculum-vitae/releases/download/latest/AlexWard-CV.pdf"
-            target="_blank"
-            ><Icon class="mx-auto h-14" name="fa-solid:file-pdf" /></a
-          >
-        </button>
-        <button
-          class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md"
-        >
-          <a href="https://github.com/alxwrd/curriculum-vitae"
-            ><Icon class="mx-auto h-14" name="fa-brands:github" /></a
-          >
-        </button>
+      <div
+        class="flex flex-row justify-center print:hidden lg:float-right lg:-mx-10 lg:-my-6"
+      >
+        <ActionButton id="print-button" icon="fa-solid:print" />
+        <ActionButton
+          icon="fa-solid:file-pdf"
+          href="https://github.com/alxwrd/curriculum-vitae/releases/download/latest/AlexWard-CV.pdf"
+        />
+        <ActionButton
+          icon="fa-brands:github"
+          href="https://github.com/alxwrd/curriculum-vitae"
+        />
       </div>
       <h2
         class="text-accent-600 text-sm tracking-[.75em] text-center py-2 uppercase"
       >
         Curriculum Vitae
       </h2>
-      <h1 class="font-['Lobster'] text-7xl text-center py-2">Alex Ward</h1>
+      <h1 class="font-['Lobster'] text-7xl text-center py-4">Alex Ward</h1>
       <div class="flex flex-col">
         <Contact icon="fa-solid:envelope" href="mailto:alxwrd@googlemail.com">
           alxwrd@googlemail.com
@@ -93,53 +89,30 @@ import { Skill, Section, Job, Contact, Link } from "../components";
         </Contact>
       </div>
       <Section>
-        <div class="grid grid-cols-3 gap-2">
-          <Skill padding icon="fa-brands:python" examples="Flask, FastAPI">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          <Skill icon="fa-brands:python" examples="Flask, FastAPI">
             Python
           </Skill>
-          <Skill
-            padding
-            icon="fa-brands:node-js"
-            examples="Express.js, SvelteKit"
-          >
+          <Skill icon="fa-brands:node-js" examples="Express.js, SvelteKit">
             Node.js
           </Skill>
-          <Skill
-            padding
-            icon="fa-brands:docker"
-            examples="Containers, CLI, compose"
-          >
+          <Skill icon="fa-brands:docker" examples="Containers, CLI, compose">
             Docker
           </Skill>
-          <Skill padding icon="fa-brands:js-square" examples="React, Svelte">
+          <Skill icon="fa-brands:js-square" examples="React, Svelte">
             Javascript
           </Skill>
-          <Skill
-            padding
-            icon="fa-brands:git-alt"
-            examples="CLI, Gitlab, Github"
-          >
+          <Skill icon="fa-brands:git-alt" examples="CLI, Gitlab, Github">
             Git
           </Skill>
-          <Skill
-            padding
-            icon="fa-brands:linux"
-            examples="RHEL based, Debian based"
-          >
+          <Skill icon="fa-brands:linux" examples="RHEL based, Debian based">
             Linux
           </Skill>
-          <Skill padding icon="fa-brands:aws" examples="ECS, S3, EMR, MWAA">
-            AWS
-          </Skill>
-          <Skill
-            padding
-            icon="fa-solid:sync-alt"
-            examples="Gitlab Pipelines, CircleCI"
-          >
+          <Skill icon="fa-brands:aws" examples="ECS, S3, EMR, MWAA">AWS</Skill>
+          <Skill icon="fa-solid:sync-alt" examples="Gitlab Pipelines, CircleCI">
             CI/CD
           </Skill>
           <Skill
-            padding
             icon="fa-solid:database"
             examples="Postgres, Oracle DB, SQL Server"
           >

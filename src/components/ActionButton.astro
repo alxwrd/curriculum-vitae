@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    id?: string;
+    icon: string;
+    href?: string;
+}
+
+const { id = "", icon, href = "" } = Astro.props;
+---
+
+<button
+    id={id}
+    class="block m-2 rounded-full brightness-75 hover:brightness-100 hover:cursor-pointer bg-accent-200 size-14 text-xl hover:text-2xl tranistion-all duration-300 drop-shadow-md"
+>
+    {
+        href && (
+            <a href={href} target="_blank">
+                <Icon class="mx-auto h-14" name={icon} />
+            </a>
+        )
+    }
+    {!href && <Icon class="mx-auto h-14" name={icon} />}
+</button>
