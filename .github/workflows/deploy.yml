@@ -46,7 +46,7 @@ jobs:
           webPageURL: https://cv.alxwrd.co.uk/
           outputFile: ./AlexWard-CV.pdf
           usePuppeteer: true
-          pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'
+          pdfOptions: '{"format": "A4", "margin": {"top": "12.7mm", "left": "12.7mm", "right": "12.7mm", "bottom": "12.7mm"}}'
       - name: Release CV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
