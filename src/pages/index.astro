@@ -138,6 +138,33 @@ import {
       <Section title="Experience">
         <Job
           title="Software Engineer"
+          company="Deepsea"
+          from={new Date("2024-04-23")}
+        >
+          <Fragment slot="worked-with">
+            <Skill icon="fa-brands:python">FastAPI</Skill>
+            <Skill icon="fa-solid:database">Postgres</Skill>
+            <Skill icon="fa-brands:aws">AWS</Skill>
+            <Skill icon="fa-brands:docker">Docker</Skill>
+            <Skill icon="fa-brands:bitbucket">Bitbucket</Skill>
+            <Skill icon="fa-brands:jenkins">Jenkins</Skill>
+          </Fragment>
+          <li>
+            Founding engineer on a new team to develop new Python based
+            services. Responsible for estabilshing technical guidance,
+            leadership, and creating best practices.
+          </li>
+          <li>
+            Identified and improved bottlenecks in a data heavy service and
+            reduced response times from ~14s to 4s - a 70% decrease.
+          </li>
+          <li>
+            Drove the addition of metrics and clean logging to services
+            inherited by the new team to improve observability.
+          </li>
+        </Job>
+        <Job
+          title="Software Engineer"
           company="Tessian"
           from={new Date("2022-02-07")}
           to={new Date("2024-01-19")}
@@ -157,9 +184,9 @@ import {
             minutes with 100+ CI credits saved per build.
           </li>
           <li>
-            Crafted developer-friendly command line tools, simplifying and
-            optimizing developer workflows for increased productivity. Regularly
-            used by 90+ engineers and winner of 'fan favourite' hackathon award.
+            Led an intiative to create a suite of tools to simplify and optimize
+            developer workflows for increased productivity. Regularly used by
+            90+ engineers and winner of 'fan favourite' hackathon award.
             <li class="ml-6">
               Developed a tool that automated the decryption of encrypted log
               data and ensuring secure, hassle-free data access.
@@ -169,6 +196,14 @@ import {
               reducing cognitive load and boosting the efficiency of service
               releases.
             </li>
+          </li>
+          <li>
+            Organised and led a team for the <Link
+              underline
+              href="https://www.hackthebox.com/events/cyber-apocalypse-2022"
+            >
+              Hack the Box 2022 CTF
+            </Link> where we placed 173rd out of 7,024 teams.
           </li>
           <li>
             Regularly produced quaility, engaging, and concise tutorials and
@@ -181,21 +216,13 @@ import {
             to allow 3rd party integration development.
           </li>
           <li>
-            Overhauled the customer onboarding/offboarding process, giving
-            indiviual services greater control over their data, and implementing
-            reporting mechanisms to prevent unintended data retention. Automated
-            the process to save the Platform team hours of manual work each
-            month - and additionally reducing out-of-hours work as
-            performance-heavy offboarding jobs were scheduled for overnight and
-            didn't require manually starting.
-          </li>
-          <li>
-            Organised and led a team for the <Link
-              underline
-              href="https://www.hackthebox.com/events/cyber-apocalypse-2022"
-            >
-              Hack the Box 2022 CTF
-            </Link> where we placed 173rd out of 7,024 teams.
+            Launched an overhaul of the customer onboarding/offboarding process,
+            giving indiviual services greater control over their data, and
+            implementing reporting mechanisms to prevent unintended data
+            retention. Automated the process to save the Platform team hours of
+            manual work each month - and additionally reducing out-of-hours work
+            as performance-heavy offboarding jobs were scheduled for overnight
+            and didn't require manually starting.
           </li>
         </Job>
         <Job
@@ -234,8 +261,7 @@ import {
           <li>
             Innovated a Python testing framework utilizing Selenium and PyTest,
             simplifying the complexities of writing Selenium tests and providing
-            a user-friendly interface for QA to automate testing more
-            efficiently.
+            a user-friendly interface for QA to automate testing.
           </li>
         </Job>
         <Job
@@ -250,7 +276,7 @@ import {
             <Skill icon="fa-brands:microsoft">TFS</Skill>
           </Fragment>
           <li>
-            Engineered a Python bridge facilitating communication between a
+            Engineered a bridge application facilitating communication between a
             legacy application and a new external system, ensuring seamless
             integration and interoperability.
           </li>

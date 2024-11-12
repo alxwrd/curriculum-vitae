@@ -5,7 +5,7 @@ interface Props {
     title: string;
     company: string;
     from: Date;
-    to: Date;
+    to?: Date;
 }
 
 const { title, company, from, to } = Astro.props;
@@ -34,11 +34,13 @@ const { title, company, from, to } = Astro.props;
                         })
                     } -
                     {
-                        to.toLocaleDateString(undefined, {
-                            month: "short",
-                            year: "numeric",
-                        })
+                        to &&
+                            to.toLocaleDateString(undefined, {
+                                month: "short",
+                                year: "numeric",
+                            })
                     }
+                    {!to && "Present"}
                 </span>
             </div>
         </div>
