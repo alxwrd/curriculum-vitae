@@ -138,8 +138,35 @@ import {
       <Section title="Experience">
         <Job
           title="Software Engineer"
+          company="Gelt"
+          from={new Date("2025-01-13")}
+        >
+          <Fragment slot="worked-with">
+            <Skill icon="fa-brands:python">Python</Skill>
+            <Skill icon="fa-brands:aws">AWS</Skill>
+            <Skill icon="fa-brands:docker">Docker</Skill>
+            <Skill icon="fa-solid:sync-alt">CI/CD</Skill>
+            <Skill icon="fa-solid:server">MCP Server</Skill>
+          </Fragment>
+          <li>
+            Reduced time to run the build and deploy pipeline by over 50%,
+            significantly improving development velocity and team productivity.
+          </li>
+          <li>
+            Built and deployed a custom MCP (Model Context Protocol) server for
+            end users, delivering it successfully despite limited documentation
+            when the specification was newly released.
+          </li>
+          <li>
+            Cut AWS costs in development environment by 30% through identifying
+            and removing unnecessary resources and optimizing existing infrastructure.
+          </li>
+        </Job>
+        <Job
+          title="Software Engineer"
           company="Deepsea"
           from={new Date("2024-04-23")}
+          to={new Date("2025-01-03")}
         >
           <Fragment slot="worked-with">
             <Skill icon="fa-brands:python">FastAPI</Skill>
