@@ -137,34 +137,39 @@ import {
       </Section>
       <Section title="Experience">
         <Job
-          title="Software Engineer"
+          title="Senior Software Engineer"
           company="Gelt"
           from={new Date("2025-01-13")}
         >
           <Fragment slot="worked-with">
-            <Skill icon="fa-brands:js-square">TypeScript</Skill>
-            <Skill icon="fa-brands:node-js">Node.js</Skill>
+            <Skill icon="fa-brands:js-square" examples="Vue.js, NestJS">TypeScript</Skill>
+            <Skill icon="fa-brands:python" examples="FastAPI, Pydantic AI">Python</Skill>
             <Skill icon="fa-brands:vuejs">Vue.js</Skill>
             <Skill icon="fa-solid:database">MongoDB</Skill>
-            <Skill icon="fa-brands:node-js">Rush.js</Skill>
-            <Skill icon="fa-brands:node-js">NestJS</Skill>
-            <Skill icon="fa-brands:aws">AWS</Skill>
+            <Skill icon="fa-brands:aws" examples="CDK, ECS, Lambda">AWS</Skill>
             <Skill icon="fa-brands:docker">Docker</Skill>
             <Skill icon="fa-brands:github">Github Actions</Skill>
-            <Skill icon="fa-solid:server">MCP Server</Skill>
           </Fragment>
           <li>
-            Reduced time to run the build and deploy pipeline by over 50%,
-            significantly improving development velocity and team productivity.
+            Building AI agents using Pydantic AI and FastAPI, with AG-UI
+            (Agent User Interaction Protocol) to connect agents to frontend
+            applications.
           </li>
           <li>
-            Built and deployed a custom MCP (Model Context Protocol) server for
-            end users, delivering it successfully despite limited documentation
-            when the specification was newly released.
+            Reduced deploy workflow time by over 40% (from ~26 to ~15 minutes)
+            by tracing through deployment pipeline shortening feedback loops on
+            every merge.
           </li>
           <li>
-            Cut AWS costs in development environment by 30% through identifying
-            and removing unnecessary resources and optimizing existing infrastructure.
+            Built and shipped an MCP server prototype end-to-end while the
+            specification was still nascent, including contributing improvements
+            upstream to the library. Internal rollout enabled a high-confidence
+            go/no-go decision on the technology, avoiding unnecessary investment.
+          </li>
+          <li>
+            Reduced AWS spend by ~$250/month (~$3k/year) in dev and staging
+            by identifying and optimising underutilised infrastructure, running
+            without issues for over 12 months.
           </li>
         </Job>
         <Job
