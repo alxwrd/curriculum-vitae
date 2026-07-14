@@ -21,11 +21,11 @@ const { title, company, from, to } = Astro.props;
             </h4>
             <div class="flex items-baseline mx-auto">
                 <span
-                    class="text-gray-400 md:text-gray-200 group-hover:text-gray-400 print:text-gray-400 duration-500 text-sm font-thin mx-3"
+                    class="text-gray-400 group-hover:text-gray-500 print:text-gray-400 duration-500 text-sm font-thin mx-3"
                     >{company}</span
                 >
                 <span
-                    class="text-gray-400 md:text-gray-200 group-hover:text-gray-400 print:text-gray-400 duration-500 text-xs font-thin text-right"
+                    class="text-gray-400 group-hover:text-gray-500 print:text-gray-400 duration-500 text-xs font-thin text-right"
                 >
                     {
                         from.toLocaleDateString(undefined, {
@@ -45,7 +45,7 @@ const { title, company, from, to } = Astro.props;
             </div>
         </div>
         <div
-            class="flex sm:flex-col ml-4 text-xs my-auto sm:w-2/3 text-gray-400 md:text-gray-200 group-hover:text-gray-400 print:text-gray-400 duration-500"
+            class="flex sm:flex-col ml-4 text-xs my-auto sm:w-2/3 text-gray-400 group-hover:text-gray-500 print:text-gray-400 duration-500"
         >
             <div
                 class="flex flex-row flex-wrap shrink gap-2 -ml-4 sm:justify-center"
