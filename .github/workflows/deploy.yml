@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install, build, and upload your site
-        uses: withastro/action@v4
+        uses: withastro/action@v6
         with:
           package-manager: bun@latest
 
@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   pdf:
     needs: deploy
@@ -42,7 +42,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: HTML to PDF
         uses: misaelnieto/web_to_pdf_action@master
         with:
