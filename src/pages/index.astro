@@ -9,6 +9,8 @@ import {
   Contact,
   Link,
 } from "../components";
+import { cv } from "../data/cv";
+import { mdLinksToHtml } from "../lib/markdown";
 ---
 
 <html lang="en">
@@ -39,29 +41,20 @@ import {
       rel="stylesheet"
     />
 
-    <meta name="author" content="Alex Ward" />
-    <meta
-      name="description"
-      content="An overview of my professional experiences, and showcased projects. Connect with me to explore collaboration opportunities and learn more about what I bring to the table."
-    />
-    <meta
-      name="keywords"
-      content="CV, Experience, Software Engineer, Gitlab, Docker, Python, Selenium, PyTest, Deployment Pipelines, API, Hack the Box, CTF, Open Source developer, textstat, trailassociation.uk, API Development, Workflow Tools, Tooling"
-    />
+    <meta name="author" content={cv.name} />
+    <meta name="description" content={cv.description} />
+    <meta name="keywords" content={cv.keywords} />
 
-    <meta property="og:title" content="Alex Ward's CV" />
+    <meta property="og:title" content={`${cv.name}'s CV`} />
     <meta property="og:url" content="https://cv.alxwrd.co.uk/" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content="An overview of my professional experiences, and showcased projects. Connect with me to explore collaboration opportunities and learn more about what I bring to the table."
-    />
+    <meta property="og:description" content={cv.description} />
 
     <meta property="og:image:url" content="/opengraph.png" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="720" />
 
-    <title>Alex Ward</title>
+    <title>{cv.name}</title>
 
     <script>
       document.getElementById("print-button")?.addEventListener("click", () => {
@@ -84,304 +77,78 @@ import {
           icon="fa-solid:file-pdf"
           href="https://github.com/alxwrd/curriculum-vitae/releases/download/latest/AlexWard-CV.pdf"
         />
-        <ActionButton
-          icon="fa-brands:github"
-          href="https://github.com/alxwrd/curriculum-vitae"
-        />
+        <ActionButton icon="fa-solid:file-alt" href="/llms.txt" />
       </div>
       <h2
         class="text-accent-600 text-sm tracking-[.75em] text-center py-2 uppercase"
       >
-        Curriculum Vitae
+        {cv.title}
       </h2>
-      <h1 class="font-['Lobster'] text-7xl text-center py-4">Alex Ward</h1>
+      <h1 class="font-['Lobster'] text-7xl text-center py-4">{cv.name}</h1>
       <div class="flex flex-col">
-        <Contact icon="fa-solid:envelope" href="mailto:alxwrd@googlemail.com">
-          alxwrd@googlemail.com
-        </Contact>
-        <Contact icon="fa-brands:github" href="https://github.com/alxwrd/">
-          github.com/alxwrd
-        </Contact>
+        {
+          cv.contact.map((contact) => (
+            <Contact icon={contact.icon} href={contact.href}>
+              {contact.label}
+            </Contact>
+          ))
+        }
       </div>
       <Section>
         <div class="grid grid-cols-1 print:grid-cols-3 sm:grid-cols-3 gap-2">
-          <Skill icon="fa-brands:python" examples="FastAPI, Pydantic AI">
-            Python
-          </Skill>
-          <Skill icon="fa-brands:node-js" examples="Express.js, RushJS">
-            Node.js
-          </Skill>
-          <Skill icon="fa-brands:docker" examples="Containers, CLI, compose">
-            Docker
-          </Skill>
-          <Skill icon="fa-brands:js-square" examples="Svelte, Vue.js">
-            Javascript
-          </Skill>
-          <Skill icon="fa-brands:git-alt" examples="CLI, Gitlab, Github">
-            Git
-          </Skill>
-          <Skill icon="fa-brands:linux" examples="RHEL based, Debian based">
-            Linux
-          </Skill>
-          <Skill icon="fa-brands:aws" examples="ECS, Step functions, Lambda">AWS</Skill>
-          <Skill icon="fa-solid:sync-alt" examples="Github Actions">
-            CI/CD
-          </Skill>
-          <Skill
-            icon="fa-solid:database"
-            examples="Postgres, Oracle DB, MongoDB"
-          >
-          DB
-          </Skill>
+          {
+            cv.skills.map((skill) => (
+              <Skill icon={skill.icon} examples={skill.examples}>
+                {skill.name}
+              </Skill>
+            ))
+          }
         </div>
       </Section>
       <Section title="Experience">
-        <Job
-          title="Senior Software Engineer"
-          company="Gelt"
-          from={new Date("2025-01-13")}
-        >
-          <Fragment slot="worked-with">
-            <Skill icon="fa-brands:js-square" examples="Node, NestJS">TypeScript</Skill>
-            <Skill icon="fa-brands:python" examples="FastAPI, Pydantic AI">Python</Skill>
-            <Skill icon="fa-brands:vuejs">Vue.js</Skill>
-            <Skill icon="fa-solid:database">MongoDB</Skill>
-            <Skill icon="fa-brands:aws" examples="CDK, ECS, Lambda">AWS</Skill>
-            <Skill icon="fa-brands:docker">Docker</Skill>
-            <Skill icon="fa-brands:github">Github Actions</Skill>
-          </Fragment>
-          <li>
-            Building AI agents using Pydantic AI and FastAPI, with AG-UI
-            (Agent User Interaction Protocol) to connect agents to frontend
-            applications.
-          </li>
-          <li>
-            Reduced deploy workflow time by over 40% (from ~26 to ~15 minutes)
-            by tracing through deployment pipeline shortening feedback loops on
-            every merge.
-          </li>
-          <li>
-            Built and shipped an MCP server prototype end-to-end while the
-            specification was still nascent, including contributing improvements
-            upstream to the library. Internal rollout enabled a high-confidence
-            go/no-go decision on the technology, avoiding unnecessary investment.
-          </li>
-          <li>
-            Reduced AWS spend by ~$250/month (~$3k/year) in dev and staging
-            by identifying and optimising underutilised infrastructure, running
-            without issues for over 12 months.
-          </li>
-        </Job>
-        <Job
-          title="Software Engineer"
-          company="Deepsea"
-          from={new Date("2024-04-23")}
-          to={new Date("2025-01-03")}
-        >
-          <Fragment slot="worked-with">
-            <Skill icon="fa-brands:python">FastAPI</Skill>
-            <Skill icon="fa-solid:database">Postgres</Skill>
-            <Skill icon="fa-brands:aws">AWS</Skill>
-            <Skill icon="fa-brands:docker">Docker</Skill>
-            <Skill icon="fa-brands:bitbucket">Bitbucket</Skill>
-            <Skill icon="fa-brands:jenkins">Jenkins</Skill>
-          </Fragment>
-          <li>
-            Founding engineer on a new team to develop new Python based
-            services. Responsible for establishing technical guidance,
-            leadership, and creating best practices.
-          </li>
-          <li>
-            Identified and improved bottlenecks in a data heavy service and
-            reduced response times from ~14s to 4s - a 70% decrease.
-          </li>
-          <li>
-            Drove the addition of metrics and clean logging to services
-            inherited by the new team to improve observability.
-          </li>
-        </Job>
-        <Job
-          title="Software Engineer"
-          company="Tessian"
-          from={new Date("2022-02-07")}
-          to={new Date("2024-01-19")}
-        >
-          <Fragment slot="worked-with">
-            <Skill icon="fa-brands:python">Flask</Skill>
-            <Skill icon="fa-solid:database">Postgres</Skill>
-            <Skill icon="fa-brands:aws" examples="ECS, S3, EMR, MWAA" />
-            <Skill icon="fa-brands:docker">Docker</Skill>
-            <Skill icon="fa-brands:github">Github</Skill>
-            <Skill icon="fa-solid:sync-alt">CircleCI</Skill>
-            <Skill icon="fa-solid:project-diagram">Kafka</Skill>
-          </Fragment>
-          <li>
-            Split up a monolithic build pipeline reducing build time for
-            individual applications from several hours to less than twenty
-            minutes with 100+ CI credits saved per build.
-          </li>
-          <li>
-            Led an initiative to create a suite of tools to simplify and optimize
-            developer workflows for increased productivity. Regularly used by
-            90+ engineers and winner of 'fan favourite' hackathon award.
-            <li class="ml-6">
-              Developed a tool that automated the decryption of encrypted log
-              data and ensuring secure, hassle-free data access.
-            </li>
-            <li class="ml-6">
-              Created a release tool that simplifies the release process,
-              reducing cognitive load and boosting the efficiency of service
-              releases.
-            </li>
-          </li>
-          <li>
-            Organised and led a team for the <Link
-              underline
-              href="https://www.hackthebox.com/events/cyber-apocalypse-2022"
+        {
+          cv.jobs.map((job) => (
+            <Job
+              title={job.title}
+              company={job.company}
+              from={new Date(job.from)}
+              to={job.to ? new Date(job.to) : undefined}
             >
-              Hack the Box 2022 CTF
-            </Link> where we placed 173rd out of 7,024 teams.
-          </li>
-          <li>
-            Regularly produced quality, engaging, and concise tutorials and
-            documentation for internal processes and systems - providing
-            examples and highlighting pitfalls where appropriate.
-          </li>
-          <li>
-            Implemented an external API service that tied together multiple
-            backend services to allow customers programmatic access to data and
-            to allow 3rd party integration development.
-          </li>
-          <li>
-            Launched an overhaul of the customer onboarding/offboarding process,
-            giving individual services greater control over their data, and
-            implementing reporting mechanisms to prevent unintended data
-            retention. Automated the process to save the Platform team hours of
-            manual work each month - and additionally reducing out-of-hours work
-            as performance-heavy offboarding jobs were scheduled for overnight
-            and didn't require manually starting.
-          </li>
-        </Job>
-        <Job
-          title="Software Engineer"
-          company="Oracle"
-          from={new Date("2018-11-01")}
-          to={new Date("2022-01-01")}
-        >
-          <Fragment slot="worked-with">
-            <Skill icon="fa-brands:python">Django</Skill>
-            <Skill icon="fa-solid:database">Oracle DB</Skill>
-            <Skill icon="fa-solid:cloud">Oracle Cloud</Skill>
-            <Skill icon="fa-brands:linux">Oracle Linux</Skill>
-            <Skill icon="fa-brands:docker">Docker</Skill>
-            <Skill icon="fa-brands:node-js">Express.js</Skill>
-            <Skill icon="fa-brands:java">Spring Boot</Skill>
-            <Skill icon="fa-brands:gitlab">Gitlab</Skill>
-            <Skill icon="fa-solid:sync-alt">Gitlab Pipelines</Skill>
-          </Fragment>
-          <li>
-            Established and managed a Gitlab deployment pipeline across multiple
-            OCI instances, handling project builds, test executions, and dynamic
-            deployment to review environments for QA testing.
-          </li>
-          <li>
-            Developed tools to manage local development environments and
-            initiate development Docker containers, facilitating seamless
-            onboarding for new team members and saving valuable development
-            time.
-          </li>
-          <li>
-            Anticipating Python 2 end-of-life, proactively upgraded the
-            application from Python 2 to Python 3, ensuring compatibility and
-            future-proofing the technology stack.
-          </li>
-          <li>
-            Innovated a Python testing framework utilizing Selenium and PyTest,
-            simplifying the complexities of writing Selenium tests and providing
-            a user-friendly interface for QA to automate testing.
-          </li>
-        </Job>
-        <Job
-          title="Application Developer"
-          company="GSA Ltd"
-          from={new Date("2016-06-01")}
-          to={new Date("2018-11-01")}
-        >
-          <Fragment slot="worked-with">
-            <Skill icon="fa-brands:python">IronPython</Skill>
-            <Skill icon="fa-brands:microsoft">SQL Server</Skill>
-            <Skill icon="fa-brands:microsoft">TFS</Skill>
-          </Fragment>
-          <li>
-            Engineered a bridge application facilitating communication between a
-            legacy application and a new external system, ensuring seamless
-            integration and interoperability.
-          </li>
-          <li>
-            Built developer pipeline tools to improve efficiency:
-            <li class="ml-6">
-              Developed tools to synchronize changes with remote development
-              environments and run linters, minimizing deployment issues and
-              improving efficiency.
-            </li>
-            <li class="ml-6">
-              Created tools to significantly reduce release and deployment
-              times, enhancing overall development speed.
-            </li>
-          </li>
-          <li>
-            Designed and maintained internal Python libraries, ensuring they
-            meet evolving development needs and standards.
-          </li>
-          <li>
-            Provided technical assistance to the support team and actively
-            maintained existing systems.
-          </li>
-        </Job>
-        <Job
-          title="Administrator"
-          company="Npower"
-          from={new Date("2014-01-01")}
-          to={new Date("2016-06-01")}
-        >
-          <Fragment slot="worked-with">
-            <Skill icon="fa-brands:python">Python</Skill>
-          </Fragment>
-          <li>
-            Developed a Python <Link
-              underline
-              href="https://github.com/alxwrd/auto-report"
-            >
-              application
-            </Link> that generates and emails HTML reports from booking system exports,
-            eliminating the manual creation of reports and saving several hours daily.
-          </li>
-        </Job>
+              <Fragment slot="worked-with">
+                {job.skills.map((skill) => (
+                  <Skill icon={skill.icon} examples={skill.examples}>
+                    {skill.name}
+                  </Skill>
+                ))}
+              </Fragment>
+              {job.achievements.map((achievement) => (
+                <Fragment>
+                  <li set:html={mdLinksToHtml(achievement.text)} />
+                  {achievement.subItems?.map((sub) => (
+                    <li class="ml-6">{sub}</li>
+                  ))}
+                </Fragment>
+              ))}
+            </Job>
+          ))
+        }
       </Section>
       <Section title="Open Source">
         <div class="grid grid-cols-2">
-          <div class="p-2">
-            <Icon name="fa-brands:github" class="inline" />
-            <Link underline href="https://textstat.org/">
-              textstat/textstat
-            </Link>
-            <span class="italic text-sm text-gray-500 mx-8">maintainer</span>
-            <p class="text-sm my-2">
-              A Python package to calculate readability statistics of a text
-              object - paragraphs, sentences, articles.
-            </p>
-          </div>
-          <div class="p-2">
-            <Icon name="fa-brands:github" class="inline" />
-            <Link underline href="https://trailassociation.uk">
-              trailassociation.uk
-            </Link>
-            <span class="italic text-sm text-gray-500 mx-8">maintainer</span>
-            <p class="text-sm my-2">
-              A resource for trail associations in the UK to help with promotion
-              and organisation.
-            </p>
-          </div>
+          {
+            cv.openSource.map((project) => (
+              <div class="p-2">
+                <Icon name="fa-brands:github" class="inline" />
+                <Link underline href={project.href}>
+                  {project.name}
+                </Link>
+                <span class="italic text-sm text-gray-500 mx-8">
+                  {project.role}
+                </span>
+                <p class="text-sm my-2">{project.description}</p>
+              </div>
+            ))
+          }
         </div>
       </Section>
     </main>
